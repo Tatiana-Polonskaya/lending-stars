@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* margin: 15px 20px; */
+  background-color: black;
+}
+
+p {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  position: relative;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  justify-content: stretch;
+  align-items: stretch;
+  overflow: hidden;
+  position: absolute;
+
+  /* opacity: 0.7; */
+  background-color: black;
+  display: -webkit-box;
+  display: flex;
+}
+
+.container {
+  flex-grow: 1;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  row-gap: 5px;
+  column-gap: 10px;
+}
+
+.item {
+  /* max-width: 100px; */
+  /* max-height: 100px; */
+
+  min-height: 50px;
+  min-width: 50px;
+}
+.big {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* contain */
+
+  /* animation: swinging 10s ease-in-out 0s infinite; */
+}
+
+@keyframes swinging {
+  0% {
+    transform: rotate(0);
+  }
+  5% {
+    transform: rotate(8deg);
+  }
+  10% {
+    transform: rotate(-7deg);
+  }
+  15% {
+    transform: rotate(6deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  25% {
+    transform: rotate(4deg);
+  }
+  30% {
+    transform: rotate(-3deg);
+  }
+  35% {
+    transform: rotate(2deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  45% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  } /* Come to rest at 50%. The rest is just stillness */
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.star {
+  position: absolute;
+  top: -20px;
+  color: #fff;
+  animation: animate 10s linear forwards;
+  /* you can set infinite too */
+}
+
+.star::before {
+  content: "\f005";
+  font-family: FontAwesome;
+  text-shadow: 0 0 5px #fff, 0 0 20px #fff, 0 0 50px #fff;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .star {
+    font-size: 8px;
+  }
+}
