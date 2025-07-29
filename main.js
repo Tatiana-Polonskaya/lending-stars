@@ -3,7 +3,7 @@ function getRandomInt(max) {
 }
 window.onload = function () {
   const allImages = [...document.getElementsByClassName("item")].filter(
-    (el) => !el.className.includes("big")
+    (el) => !el.className.includes("big") && !el.className.includes("col")
   );
   const lens = allImages.length;
 
@@ -23,7 +23,7 @@ window.onload = function () {
         allImages[num].style.animation = "";
       });
     }, 8000);
-  }, 6000);
+  }, 5000);
 };
 
 function stars() {
@@ -33,7 +33,7 @@ function stars() {
   e.style.left = Math.random() * +innerWidth + "px";
 
   let size = Math.random() * 12;
-  let duration = Math.random() * 5;
+  let duration = Math.random() * 15;
 
   e.style.fontSize = 12 + "px";
   e.style.animationDuration = 2 + duration + "s";
